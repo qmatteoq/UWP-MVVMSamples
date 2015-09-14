@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM Light", "MVVM Light", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLight.Basic", "MVVM Light\MVVMLight.Basic\MVVMLight.Basic.csproj", "{D1951D0E-416E-4841-A62E-B9A4054DE7A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLight.Advanced", "MVVM Light\MVVMLight.Basic\MVVMLight.Advanced\MVVMLight.Advanced.csproj", "{7DAD87DC-20DB-4E90-AACB-8D5FE5C0EB64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLight.Advanced", "MVVM Light\MVVMLight.Advanced\MVVMLight.Advanced.csproj", "{7DAD87DC-20DB-4E90-AACB-8D5FE5C0EB64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
