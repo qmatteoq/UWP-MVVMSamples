@@ -1,23 +1,13 @@
 ﻿<Page
-    x:Class="MVVMLight.Advanced.Views.MainView"
+    x:Class="CaliburnMicro.Advanced.Views.MainView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MVVMLight.Advanced.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Main}"
     mc:Ignorable="d">
 
-    <interactivity:Interaction.Behaviors>
-        <core:EventTriggerBehavior EventName="Loaded">
-            <core:InvokeCommandAction Command="{Binding Path=LoadCommand, Mode=OneWay}" />
-        </core:EventTriggerBehavior>
-    </interactivity:Interaction.Behaviors>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Path=News}">
+        <ListView x:Name="News">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -32,7 +22,7 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <AppBarButton Icon="Refresh" Label="Load" Command="{Binding Path=LoadCommand}" />
+                <AppBarButton Icon="Refresh" Label="Load" x:Name="RefreshData" />
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

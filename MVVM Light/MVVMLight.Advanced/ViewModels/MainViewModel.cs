@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MVVMLight.Advanced.Models;
@@ -38,8 +34,7 @@ namespace MVVMLight.Advanced.ViewModels
                 {
                     _loadCommand = new RelayCommand(async () =>
                     {
-                        RssService rssService = new RssService();
-                        List<FeedItem> items = await rssService.GetNews("http://wp.qmatteoq.com/rss");
+                        List<FeedItem> items = await _rssService.GetNews("http://wp.qmatteoq.com/rss");
                         News = new ObservableCollection<FeedItem>(items);
                     });
                 }
