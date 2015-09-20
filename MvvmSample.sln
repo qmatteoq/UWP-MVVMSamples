@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Caliburn Micro", "Caliburn 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Basic", "Caliburn Micro\CaliburnMicro.Basic\CaliburnMicro.Basic.csproj", "{1B2476CA-6D9C-4FC7-899B-FCF72DDF936B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Advanced", "CaliburnMicro.Advanced\CaliburnMicro.Advanced.csproj", "{5C57ED5C-E878-4469-B0B2-9CA133810EC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Advanced", "Caliburn Micro\CaliburnMicro.Advanced\CaliburnMicro.Advanced.csproj", "{5C57ED5C-E878-4469-B0B2-9CA133810EC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLight.Messages", "MVVM Light\MVVMLight.Messages\MVVMLight.Messages.csproj", "{30996E7A-9731-424A-8A9A-06810D83BE96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,24 @@ Global
 		{5C57ED5C-E878-4469-B0B2-9CA133810EC5}.Release|x86.ActiveCfg = Release|x86
 		{5C57ED5C-E878-4469-B0B2-9CA133810EC5}.Release|x86.Build.0 = Release|x86
 		{5C57ED5C-E878-4469-B0B2-9CA133810EC5}.Release|x86.Deploy.0 = Release|x86
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|ARM.ActiveCfg = Debug|ARM
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|ARM.Build.0 = Debug|ARM
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|ARM.Deploy.0 = Debug|ARM
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|x64.ActiveCfg = Debug|x64
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|x64.Build.0 = Debug|x64
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|x64.Deploy.0 = Debug|x64
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|x86.ActiveCfg = Debug|x86
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|x86.Build.0 = Debug|x86
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Debug|x86.Deploy.0 = Debug|x86
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|ARM.ActiveCfg = Release|ARM
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|ARM.Build.0 = Release|ARM
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|ARM.Deploy.0 = Release|ARM
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|x64.ActiveCfg = Release|x64
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|x64.Build.0 = Release|x64
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|x64.Deploy.0 = Release|x64
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|x86.ActiveCfg = Release|x86
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|x86.Build.0 = Release|x86
+		{30996E7A-9731-424A-8A9A-06810D83BE96}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +126,6 @@ Global
 		{7DAD87DC-20DB-4E90-AACB-8D5FE5C0EB64} = {DDA7919A-D612-491D-BC35-920706F377D4}
 		{1B2476CA-6D9C-4FC7-899B-FCF72DDF936B} = {9B2FD2A7-E3BB-4623-9EFD-244356C77F7E}
 		{5C57ED5C-E878-4469-B0B2-9CA133810EC5} = {9B2FD2A7-E3BB-4623-9EFD-244356C77F7E}
+		{30996E7A-9731-424A-8A9A-06810D83BE96} = {DDA7919A-D612-491D-BC35-920706F377D4}
 	EndGlobalSection
 EndGlobal

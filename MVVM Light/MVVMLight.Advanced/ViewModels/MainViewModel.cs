@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MVVMLight.Advanced.Models;
@@ -24,6 +25,14 @@ namespace MVVMLight.Advanced.ViewModels
             set { Set(ref _news, value); }
         }
 
+        private FeedItem _selectedFeedItem;
+
+        public FeedItem SelectedFeedItem
+        {
+            get { return _selectedFeedItem; }
+            set { Set(ref _selectedFeedItem, value); }
+        }
+
         private RelayCommand _loadCommand;
 
         public RelayCommand LoadCommand
@@ -40,6 +49,24 @@ namespace MVVMLight.Advanced.ViewModels
                 }
 
                 return _loadCommand;
+            }
+        }
+
+        private RelayCommand _itemSelectedCommand;
+
+        public RelayCommand ItemSelectedCommand
+        {
+            get
+            {
+                if (_itemSelectedCommand == null)
+                {
+                    _itemSelectedCommand = new RelayCommand(() =>
+                    {
+                        Debug.WriteLine(SelectedFeedItem.Title);
+                    });
+                }
+
+                return _itemSelectedCommand;
             }
         }
     }
