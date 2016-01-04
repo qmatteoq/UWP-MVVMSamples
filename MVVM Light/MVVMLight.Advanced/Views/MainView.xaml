@@ -17,21 +17,21 @@
     </interactivity:Interaction.Behaviors>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-<ListView ItemsSource="{Binding Path=News}" SelectedItem="{Binding Path=SelectedFeedItem, Mode=TwoWay}">
-    <interactivity:Interaction.Behaviors>
-        <core:EventTriggerBehavior EventName="SelectionChanged">
-            <core:InvokeCommandAction Command="{Binding Path=ItemSelectedCommand}" />
-        </core:EventTriggerBehavior>
-    </interactivity:Interaction.Behaviors>
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <StackPanel>
-                <TextBlock Text="{Binding Path=PublishDate}" Style="{StaticResource SubtitleTextBlockStyle}" />
-                <TextBlock Text="{Binding Path=Title}" Style="{StaticResource TitleTextBlockStyle}" />
-            </StackPanel>
-        </DataTemplate>
-    </ListView.ItemTemplate>
-</ListView>
+        <ListView ItemsSource="{Binding Path=News}" SelectedItem="{Binding Path=SelectedFeedItem, Mode=TwoWay}">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="SelectionChanged">
+                    <core:InvokeCommandAction Command="{Binding Path=ItemSelectedCommand}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=PublishDate}" Style="{StaticResource SubtitleTextBlockStyle}" />
+                        <TextBlock Text="{Binding Path=Title}" Style="{StaticResource TitleTextBlockStyle}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 
     <Page.BottomAppBar>
