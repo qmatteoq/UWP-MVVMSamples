@@ -1,7 +1,7 @@
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace MVVMLight.Messages.ViewModels
+namespace MVVMLight.Dispatcher.ViewModels
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -15,6 +15,7 @@ namespace MVVMLight.Messages.ViewModels
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
 
             SimpleIoc.Default.Register<MainViewModel>();
         }
