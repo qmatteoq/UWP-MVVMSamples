@@ -10,6 +10,7 @@ namespace MVVMLight.Advanced.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+
         private readonly IRssService _rssService;
 
         public MainViewModel(IRssService rssService)
