@@ -11,7 +11,6 @@ namespace MVVMLight.Services.Shared.ViewModels
         public MainViewModel(IDialogService dialogService)
         {
             _dialogService = dialogService;
-
         }
 
         private RelayCommand _showDialogCommand;
