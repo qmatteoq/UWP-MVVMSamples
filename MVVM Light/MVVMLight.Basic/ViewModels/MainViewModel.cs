@@ -16,7 +16,7 @@ namespace MVVMLight.Basic.ViewModels
             set
             {
                 Set(ref _name, value);
-                SayHello.RaiseCanExecuteChanged();
+                //SayHello.RaiseCanExecuteChanged();
             }
         }
 

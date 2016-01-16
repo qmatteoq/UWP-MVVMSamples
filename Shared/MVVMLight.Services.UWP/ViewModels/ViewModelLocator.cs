@@ -1,6 +1,8 @@
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using MVVMLight.Services.Shared.Services;
 using MVVMLight.Services.Shared.ViewModels;
+using MVVMLight.Services.UWP.Services;
 
 namespace MVVMLight.Services.UWP.ViewModels
 {
@@ -17,6 +19,7 @@ namespace MVVMLight.Services.UWP.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
             SimpleIoc.Default.Register<MainViewModel>();
         }
 

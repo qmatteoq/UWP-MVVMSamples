@@ -1,3 +1,4 @@
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using MVVMLight.Advanced.Services;
@@ -17,8 +18,14 @@ namespace MVVMLight.Advanced.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<IRssService, RssService>();
-            //SimpleIoc.Default.Register<IRssService, FakeRssService>();
+            if (ViewModelBase.IsInDesignModeStatic)
+            {
+                SimpleIoc.Default.Register<IRssService, FakeRssService>();
+            }
+            else
+            {
+                SimpleIoc.Default.Register<IRssService, RssService>();
+            }
 
             SimpleIoc.Default.Register<MainViewModel>();
         }

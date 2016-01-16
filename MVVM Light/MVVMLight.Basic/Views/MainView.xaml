@@ -17,13 +17,6 @@
             </StackPanel>
             <TextBlock Text="{Binding Path=Message}" Style="{StaticResource HeaderTextBlockStyle}" />
         </StackPanel>
-        <StackPanel Margin="12, 30, 0, 0">
-            <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 30">
-                <TextBox Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                         Width="300" Margin="0, 0, 20, 0" />
-                <Button Command="{Binding Path=SayHello}" Content="Click me!" />
-            </StackPanel>
-            <TextBlock Text="{Binding Path=Message}" Style="{StaticResource HeaderTextBlockStyle}" />
-        </StackPanel>
+
     </Grid>
 </Page>

@@ -17,7 +17,8 @@
     </interactivity:Interaction.Behaviors>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Path=News}" SelectedItem="{Binding Path=SelectedFeedItem, Mode=TwoWay}">
+        <ListView ItemsSource="{Binding Path=News}" 
+                  SelectedItem="{Binding Path=SelectedFeedItem, Mode=TwoWay}">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="SelectionChanged">
                     <core:InvokeCommandAction Command="{Binding Path=ItemSelectedCommand}" />

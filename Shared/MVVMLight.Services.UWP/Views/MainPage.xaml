@@ -9,6 +9,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Button Content="Click me!" Command="{Binding Path=ShowDialogCommand}" />
     </Grid>
 </Page>

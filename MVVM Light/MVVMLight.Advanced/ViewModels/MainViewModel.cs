@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using GalaSoft.MvvmLight;
@@ -10,12 +11,18 @@ namespace MVVMLight.Advanced.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-
         private readonly IRssService _rssService;
 
         public MainViewModel(IRssService rssService)
         {
             _rssService = rssService;
+            if (IsInDesignMode)
+            {
+                var task = _rssService.GetNews("abc");
+                task.Wait();
+                List<FeedItem> items = task.Result;
+                News = new ObservableCollection<FeedItem>(items);
+            }
         }
 
         private ObservableCollection<FeedItem> _news;
