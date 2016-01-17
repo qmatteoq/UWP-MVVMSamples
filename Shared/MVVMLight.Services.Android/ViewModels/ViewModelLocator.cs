@@ -1,21 +1,21 @@
-using System;
-using Windows.UI.Popups;
-using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using MVVMLight.Services.Android.Services;
 using MVVMLight.Services.Shared.Services;
 using MVVMLight.Services.Shared.ViewModels;
-using MVVMLight.Services.UWP.Services;
 
-namespace MVVMLight.Services.UWP.ViewModels
+namespace MVVMLight.Services.Android.ViewModels
 {
     /// <summary>
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
     /// </summary>
-    public class ViewModelLocator
+    public static class ViewModelLocator
     {
-        public ViewModelLocator()
+        /// <summary>
+        /// Initializes a new instance of the ViewModelLocator class.
+        /// </summary>
+        static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
@@ -23,6 +23,6 @@ namespace MVVMLight.Services.UWP.ViewModels
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
-        public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+        public static MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
     }
 }

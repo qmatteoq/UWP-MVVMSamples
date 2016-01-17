@@ -2,40 +2,42 @@
 using Android.Widget;
 using Android.OS;
 using GalaSoft.MvvmLight.Helpers;
-using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
-using Microsoft.Practices.ServiceLocation;
+using MVVMLight.Services.Android.ViewModels;
 using MVVMLight.Services.Shared.ViewModels;
-using DialogService = MVVMLight.Services.Android.Services.DialogService;
-using IDialogService = MVVMLight.Services.Shared.Services.IDialogService;
 
 namespace MVVMLight.Services.Android
 {
-    [Activity(Label = "MVVMLight.Services.Android", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity: ActivityBase
+[Activity(Label = "MVVMLight.Services.Android", MainLauncher = true, Icon = "@drawable/icon")]
+public class MainActivity : ActivityBase
+{
+    public MainViewModel ViewModel => ViewModelLocator.Main;
+
+    private Button _commandButton;
+
+    public Button CommandButton
+        => _commandButton ?? (_commandButton = this.FindViewById<Button>(Resource.Id.MyButton));
+
+    private TextView _messageView;
+    public TextView MessageView
+        => _messageView ?? (_messageView = this.FindViewById<TextView>(Resource.Id.MessageView));
+
+    private Binding _messageBinding;
+
+    protected override void OnCreate(Bundle bundle)
     {
-        public MainViewModel ViewModel => ServiceLocator.Current.GetInstance<MainViewModel>();
+        base.OnCreate(bundle);
 
-        protected override void OnCreate(Bundle bundle)
-        {
-            if (!SimpleIoc.Default.IsRegistered<IDialogService>())
-            {
-                ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-                SimpleIoc.Default.Register<IDialogService, DialogService>();
-                SimpleIoc.Default.Register<MainViewModel>();
-            }
+        // Set our view from the "main" layout resource
+        SetContentView(Resource.Layout.Main);
 
-            base.OnCreate(bundle);
+        // Get our button from the layout resource,
+        // and attach an event to it
 
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+        CommandButton.SetCommand("Click", ViewModel.ShowDialogCommand);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
-           
-            button.SetCommand("Click", ViewModel.ShowDialogCommand);
-        }
+        _messageBinding = this.SetBinding(() => ViewModel.Message, () => MessageView.Text, BindingMode.OneWay);
     }
+}
 }
 

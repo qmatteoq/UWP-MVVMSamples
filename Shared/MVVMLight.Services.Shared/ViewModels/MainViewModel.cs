@@ -13,6 +13,14 @@ namespace MVVMLight.Services.Shared.ViewModels
             _dialogService = dialogService;
         }
 
+        private string _message;
+
+        public string Message
+        {
+            get { return _message; }
+            set { Set(ref _message, value); }
+        }
+
         private RelayCommand _showDialogCommand;
 
         public RelayCommand ShowDialogCommand
@@ -23,6 +31,7 @@ namespace MVVMLight.Services.Shared.ViewModels
                 {
                     _showDialogCommand = new RelayCommand(async () =>
                     {
+                        Message = "The button has been clicked";
                         await _dialogService.ShowDialogAsync("Hello world");
                     });
                 }
